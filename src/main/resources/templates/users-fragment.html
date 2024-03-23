@@ -1,0 +1,39 @@
+
+<table id="検索結果一覧" style="width: 100%; word-break: break-all; font-size: 13px;">
+  <!--                            テーブルを動的に作成
+   -->
+  <tbody>
+    <tr style="height: 50px; border-bottom: 3px solid #5b9bd5;">
+      <td style="text-align: center; width: 40px">選択</td>
+      <td style="text-align: center; width: 145px">
+        氏名<br /> <span> ▲ </span>
+      </td>
+      <td style="text-align: center; width: 40px">
+        性別<br /> <span></span>
+      </td>
+      <td style="text-align: center; width: 100px">
+        生年月日<br /> <span></span>
+      </td>
+      <td style="text-align: center; width: 170px">
+        メール<br /> <span></span>
+      </td>
+      <td style="text-align: center; width: 100px">
+        所属<br /> <span></span>
+      </td>
+      <td style="text-align: center; width: 100px">
+        役職<br /> <span></span>
+      </td>
+    </tr>
+    <tr th:each="user, stat : ${users}">
+      <td style="text-align: center; width: 40px">
+        <input type="checkbox" th:id="${'chk選択' + stat.index}" th:name="'選択一覧'" th:value="${user.id}" />
+      </td>
+      <td style="width: 145px" th:text="${user.name}"></td>
+      <td style="text-align: center; width: 40px" th:text="${user.gender}"></td>
+      <td style="text-align: center; width: 100px" th:text="${user.dob}"></td>
+      <td style="text-align: center; width: 170px" th:text="${user.email}"></td>
+      <td style="text-align: center; width: 100px" th:text="${user.department}"></td>
+      <td style="text-align: center; width: 100px" th:text="${user.position}"></td>
+    </tr>
+  </tbody>
+</table>

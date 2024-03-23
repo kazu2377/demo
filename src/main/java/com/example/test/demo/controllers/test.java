@@ -44,6 +44,8 @@ public class test {
     public String filterUsers (@RequestParam ("position") String position, Model model) {
         List<User> users = userService.getUsersByPosition (position);
         model.addAttribute ("users", users);
-        return "hello"; // ユーザー一覧を表示するThymeleafテンプレート
+        // return "hello"; // ユーザー一覧を表示するThymeleafテンプレート
+        return "users-fragment"; // ユーザーテーブルの行だけを更新するためのテンプレート
+        
     }
 }
