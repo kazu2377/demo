@@ -14,208 +14,208 @@
 
 
 </head>
- <style>
-      .TopMenuContainer {
-        width: 100%;
-        height: 50px;
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #5b9bd5;
-        z-index: 100;
-      }
-      .TopMenu {
-        width: 1012px;
-        height: 50px;
-        display: block;
-        position: fixed;
-        top: 0;
-        background-color: #5b9bd5;
-        z-index: 101;
-      }
+<style>
+.TopMenuContainer {
+		width: 100%;
+		height: 50px;
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #5b9bd5;
+		z-index: 100;
+}
 
-      .TopMenuTitle {
-        float: left;
-        padding-top: 5px;
-      }
+.TopMenu {
+		width: 1012px;
+		height: 50px;
+		display: block;
+		position: fixed;
+		top: 0;
+		background-color: #5b9bd5;
+		z-index: 101;
+}
 
-      .TopMenuSettingImgContainer {
-        float: right;
-        width: 40px;
-        height: 100%;
-        right: 0px;
-      }
+.TopMenuTitle {
+		float: left;
+		padding-top: 5px;
+}
 
-      .TopMenuDropDownComandContainer {
-        float: right;
-        height: 100%;
-      }
+.TopMenuSettingImgContainer {
+		float: right;
+		width: 40px;
+		height: 100%;
+		right: 0px;
+}
 
-      .TopMenuDropDownComandContainer:hover .TopMenuComandContent {
-        display: block !important;
-      }
+.TopMenuDropDownComandContainer {
+		float: right;
+		height: 100%;
+}
 
-      .TopMenuComandContent {
-        position: absolute;
-        top: 45px;
-        right: 0px;
-        width: 100px;
-        font-size: 12px;
-        padding: 3px;
-        border: 1px solid #0094ff;
-        display: none !important;
-        background-color: white;
-        z-index: 90;
-      }
+.TopMenuDropDownComandContainer:hover .TopMenuComandContent {
+		display: block !important;
+}
 
-      .TopMenuSettingImg {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        right: 0px;
-      }
+.TopMenuComandContent {
+		position: absolute;
+		top: 45px;
+		right: 0px;
+		width: 100px;
+		font-size: 12px;
+		padding: 3px;
+		border: 1px solid #0094ff;
+		display: none !important;
+		background-color: white;
+		z-index: 90;
+}
 
-      .TopMenuNick {
-        float: right;
-        font-size: 18px;
-        padding-top: 15px;
-      }
+.TopMenuSettingImg {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		right: 0px;
+}
 
-      .LeftMenu {
-        width: 200px;
-        height: 100vh;
-        background-color: #ffffff;
-        color: white;
-        position: fixed;
-        top: 60px;
-        padding: 10px;
-        z-index: 90;
-      }
+.TopMenuNick {
+		float: right;
+		font-size: 18px;
+		padding-top: 15px;
+}
 
-      .RightMenu {
-        width: 0px;
-        height: 100vh;
-        background-color: #ffffff;
-        color: white;
-        position: fixed;
-        right: 0;
-        top: 60px;
-        padding: 10px;
-        z-index: 90;
-      }
+.LeftMenu {
+		width: 200px;
+		height: 100vh;
+		background-color: #ffffff;
+		color: white;
+		position: fixed;
+		top: 60px;
+		padding: 10px;
+		z-index: 90;
+}
 
-      .TopContainer {
-        width: 1012px;
-        height: 50xp;
-        position: relative;
-        left: calc(50% - 506px); /* 回答3・追加：画面を中央に寄せる */
-      }
+.RightMenu {
+		width: 0px;
+		height: 100vh;
+		background-color: #ffffff;
+		color: white;
+		position: fixed;
+		right: 0;
+		top: 60px;
+		padding: 10px;
+		z-index: 90;
+}
 
-      .MidContainer {
-        width: 802px;
-        height: auto;
-        min-height: 100%;
-        display: inline-block;
-        margin-top: 60px;
-        margin-left: 210px;
-        margin-right: 0px;
-        margin-bottom: 0;
-        background-color: #ffffff;
-        padding: 10px;
-        /* overflow-y:scroll; */ /* 回答1・削除：白部分の縦スクロールバーを無くす */
-      }
+.TopContainer {
+		width: 1012px;
+		height: 50xp;
+		position: relative;
+		left: calc(50% - 506px); /* 回答3・追加：画面を中央に寄せる */
+}
 
-      #Form1 {
-        height: calc(100vh - 60px);
-      }
+.MidContainer {
+		width: 802px;
+		height: auto;
+		min-height: 100%;
+		display: inline-block;
+		margin-top: 60px;
+		margin-left: 210px;
+		margin-right: 0px;
+		margin-bottom: 0;
+		background-color: #ffffff;
+		padding: 10px;
+		/* overflow-y:scroll; */ /* 回答1・削除：白部分の縦スクロールバーを無くす */
+}
 
-      .ErrorMsgSuperContainer {
-        background-color: rgba(100, 100, 100, 0.5);
-      }
+#Form1 {
+		height: calc(100vh - 60px);
+}
 
-      .ErrorMsgContainer1 {
-        width: 700px;
-        height: auto;
-        margin: 0 auto;
-        background-color: white;
-        border: 1px solid #cccccc;
-        padding: 10px;
-      }
+.ErrorMsgSuperContainer {
+		background-color: rgba(100, 100, 100, 0.5);
+}
 
-      .ErrorMsgContent {
-        border-bottom: 1px solid #cccccc;
-        text-align: left;
-      }
+.ErrorMsgContainer1 {
+		width: 700px;
+		height: auto;
+		margin: 0 auto;
+		background-color: white;
+		border: 1px solid #cccccc;
+		padding: 10px;
+}
 
-      .ErrorMsgSuperContainer span {
-        margin-left: 10px;
-        margin-right: 10px;
-        word-break: break-all;
-        font-size: 16px;
-      }
+.ErrorMsgContent {
+		border-bottom: 1px solid #cccccc;
+		text-align: left;
+}
 
-      .ErrorMsgClose {
-        font-size: 16px;
-      }
+.ErrorMsgSuperContainer span {
+		margin-left: 10px;
+		margin-right: 10px;
+		word-break: break-all;
+		font-size: 16px;
+}
 
-      #divLoading {
-        background-color: rgba(100, 100, 100, 0.5);
-      }
+.ErrorMsgClose {
+		font-size: 16px;
+}
 
-      span {
-        font-size: 18px;
-        color: black;
-      }
-    </style>
+#divLoading {
+		background-color: rgba(100, 100, 100, 0.5);
+}
 
-    <style>
-      #検索結果一覧 td {
-        padding: 3px;
-        border: 1px solid #0094ff;
-        font-size: 13px;
-      }
+span {
+		font-size: 18px;
+		color: black;
+}
+</style>
 
-      #検索結果一覧 tr:first-child td {
-        border-top: 0;
-      }
+<style>
+#検索結果一覧 td {
+		padding: 3px;
+		border: 1px solid #0094ff;
+		font-size: 13px;
+}
 
-      #検索結果一覧 tr:last-child td {
-        border-bottom: 0;
-      }
+#検索結果一覧 tr:first-child td {
+		border-top: 0;
+}
 
-      #検索結果一覧 tr td:first-child {
-        border-left: 0;
-      }
+#検索結果一覧 tr:last-child td {
+		border-bottom: 0;
+}
 
-      #検索結果一覧 tr td:last-child {
-        border-right: 0;
-      }
+#検索結果一覧 tr td:first-child {
+		border-left: 0;
+}
 
-      #検索結果一覧 tr:hover {
-        background-color: peachpuff;
-      }
+#検索結果一覧 tr td:last-child {
+		border-right: 0;
+}
 
-      #tb改ページ,
-      #tb改ページ td {
-        border: none;
-      }
+#検索結果一覧 tr:hover {
+		background-color: peachpuff;
+}
 
-      #btn検索条件表示 {
-        background-color: rgba(128, 128, 128, 0.53);
-        border-color: white;
-      }
+#tb改ページ, #tb改ページ td {
+		border: none;
+}
 
-      #tb現ページ td {
-        border: none;
-      }
+#btn検索条件表示 {
+		background-color: rgba(128, 128, 128, 0.53);
+		border-color: white;
+}
 
-      .email {
-        display: none;
-      }
-    </style>
+#tb現ページ td {
+		border: none;
+}
 
-    <script>
+.email {
+		display: none;
+}
+</style>
+
+<script>
       function ShowLoading() {
         $("#divLoading").toggleClass("hide loading");
       }
@@ -327,350 +327,276 @@
       }
     </script>
 
-    <style type="text/css">
-      @keyframes resizeanim {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 0;
-        }
-      }
-      .resize-triggers {
-        animation: 1ms resizeanim;
-        visibility: hidden;
-        opacity: 0;
-      }
-      .resize-triggers,
-      .resize-triggers > div,
-      .contract-trigger:before {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-      }
-      .resize-triggers > div {
-        background: #eee;
-        overflow: auto;
-      }
-      .contract-trigger:before {
-        width: 200%;
-        height: 200%;
-      }
-    </style>
-  </head>
-  
+<style type="text/css">
+@keyframes resizeanim {from { opacity:0;
+		
+}
+
+to {
+		opacity: 0;
+}
+
+}
+.resize-triggers {
+		animation: 1ms resizeanim;
+		visibility: hidden;
+		opacity: 0;
+}
+
+.resize-triggers, .resize-triggers>div, .contract-trigger:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+}
+
+.resize-triggers>div {
+		background: #eee;
+		overflow: auto;
+}
+
+.contract-trigger:before {
+		width: 200%;
+		height: 200%;
+}
+</style>
+</head>
 
 
-  <body style="text-align: center; /* padding-left: 17px; */">
-    <!-- 回答2・変更：左パネルの左の余白を無くす -->
-    <div class="hide ErrorMsgSuperContainer">
-      <table style="width: 100%; height: 100%; vertical-align: middle">
-        <tbody>
-          <tr>
-            <td style="text-align: center">
-              <div class="ErrorMsgContainer1">
-                <div class="clear_b ErrorMsgContent">
-                  <span></span>
-                </div>
-                <input
-                  type="button"
-                  class="Button ErrorMsgClose"
-                  onclick="HideErrMsg(); ;"
-                  value="閉じる"
-                  style="margin-top: 10px"
-                />
+
+<body style="text-align: center;">
+  <!-- 回答2・変更：左パネルの左の余白を無くす -->
+  <div class="hide ErrorMsgSuperContainer">
+    <table style="width: 100%; height: 100%; vertical-align: middle">
+      <tbody>
+        <tr>
+          <td style="text-align: center">
+            <div class="ErrorMsgContainer1">
+              <div class="clear_b ErrorMsgContent">
+                <span></span>
               </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="hide" id="divLoading">
-      <table style="width: 100%; height: 100%; vertical-align: middle">
-        <tbody>
-          <tr>
-            <td style="text-align: center">
-              <img
-                src="/Images/loading.gif"
-                alt="検察中"
-                width="130"
-                height="130"
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="TopContainer">
-      <div class="TopMenuContainer PageHeader"></div>
-      <div id="top" class="TopMenu PageHeader">
-        <div class="TopMenuTitle">ユーザー管理</div>
-
-        <div class="TopMenuSettingImgContainer">
-          <div class="TopMenuDropDownComandContainer">
-            <!-- 回答5・変更・開始：トップバーの画像を設定 -->
-            <input
-              type="image"
-              class="TopMenuSettingImg v_middle_a"
-              src="./Images/setting.png"
-            />
-            <!-- 回答5・変更・完了：トップバーの画像を設定 -->
-            <div class="TopMenuComandContent">
-              <a href="/BaseInformation/Index" style="font-size: 12px"
-                >基本情報</a
-              ><br />
-              <a href="/ProfileInformation/Index" style="font-size: 12px"
-                >プロファイル</a
-              ><br />
-              <div class="TitleLine"></div>
-              <a href="/Authentication/Logout" style="font-size: 12px"
-                >ログアウト</a
-              >
+              <input type="button" class="Button ErrorMsgClose" onclick="HideErrMsg(); ;" value="閉じる" style="margin-top: 10px" />
             </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="hide" id="divLoading">
+    <table style="width: 100%; height: 100%; vertical-align: middle">
+      <tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="/Images/loading.gif" alt="検察中" width="130" height="130" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="TopContainer">
+    <div class="TopMenuContainer PageHeader"></div>
+    <div id="top" class="TopMenu PageHeader">
+      <div class="TopMenuTitle">ユーザー管理</div>
+
+      <div class="TopMenuSettingImgContainer">
+        <div class="TopMenuDropDownComandContainer">
+          <!-- 回答5・変更・開始：トップバーの画像を設定 -->
+          <input type="image" class="TopMenuSettingImg v_middle_a" src="./Images/setting.png" />
+          <!-- 回答5・変更・完了：トップバーの画像を設定 -->
+          <div class="TopMenuComandContent">
+            <a href="/BaseInformation/Index" style="font-size: 12px">基本情報</a><br /> <a href="/ProfileInformation/Index" style="font-size: 12px">プロファイル</a><br />
+            <div class="TitleLine"></div>
+            <a href="/Authentication/Logout" style="font-size: 12px">ログアウト</a>
           </div>
         </div>
-        <div class="TopMenuNick">ホアン</div>
       </div>
-      <div id="left" class="LeftMenu">
-        <div style="text-align: left; margin-bottom: -5px">
-          <a href="/TimeLine/Index" style="margin-left: 10px">ホアン</a>
-        </div>
-        <div style="text-align: left">
-          <!-- 回答4・変更・開始：左パネルの画像を設定 -->
-          <img
-            src="./Images/Chrysanthemum.jpg"
-            style="
-              width: 150px;
-              max-height: 150px;
-              position: relative;
-              z-index: 9;
-              border: 1px dashed #bbbbbb;
-              margin-bottom: 10px;
-            "
-          />
-          <!-- 回答4・変更・完了：左パネルの画像を設定 -->
-        </div>
-
-        <div class="TitleLine" style="width: 100%"></div>
-
-        <div style="text-align: left; margin-top: 5px">
-          <span style="padding-left: 10px; font-weight: bold"
-            >ユーザー情報</span
-          >
-        </div>
-        <div style="text-align: left; margin-top: 5px">
-          <span style="margin-left: 40px">営業部</span>
-        </div>
-        <div style="text-align: left; margin-top: 5px">
-          <span style="margin-left: 40px">1111111</span>
-        </div>
-
-        <div class="TitleLine" style="width: 100%; margin-top: 10px"></div>
-
-        <ul style="padding-left: 10px">
-          <li style="text-align: left; margin-top: 5px">
-            <a href="/TimeLine/Index" style="margin-left: 10px">マイページ</a>
-          </li>
-          <li style="text-align: left; margin-top: 5px">
-            <a
-              href="/BulletinBoard/Index"
-              style="margin-left: 10px; cursor: pointer"
-              >掲示板</a
-            >
-          </li>
-          <li style="text-align: left; margin-top: 5px">
-            <a
-              href="/ApplicationForUser/Index"
-              style="margin-left: 10px; cursor: pointer"
-              >書類申請</a
-            >
-          </li>
-          <li style="text-align: left; margin-top: 5px">
-            <a href="/FindUser/Index" style="margin-left: 10px; cursor: pointer"
-              >ユーザー検索</a
-            >
-          </li>
-          <li style="text-align: left; margin-top: 5px">
-            <a href="" style="margin-left: 10px; cursor: pointer"
-              >E-ランニング</a
-            >
-          </li>
-          <li style="text-align: left; margin-top: 5px">
-            <a
-              href="/UserManagement/Index"
-              style="margin-left: 10px; cursor: pointer"
-              >ユーザー管理</a
-            >
-          </li>
-        </ul>
+      <div class="TopMenuNick">ホアン</div>
+    </div>
+    <div id="left" class="LeftMenu">
+      <div style="text-align: left; margin-bottom: -5px">
+        <a href="/TimeLine/Index" style="margin-left: 10px">ホアン</a>
       </div>
-      <form id="Form1">
-        <div id="mid" class="MidContainer" style="position: relative">
-          <table style="width: 100%">
-            <tbody>
-              <tr>
-                <td
-                  style="text-align: left; font-size: 25px; font-weight: bold"
-                  colspan="3"
-                >
-                  ユーザーの一覧
-                </td>
-              </tr>
-              <tr style="height: 5px; vertical-align: top">
-                <td colspan="3">
-                  <div class="TitleLine"></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table>
-            <tbody>
-              <tr id="errtr" style="height: auto">
-                <td style="width: 50px"></td>
-                <td style="width: auto">
-                  <div id="lblエラー" style="color: red"></div>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td colspan="2">
-                  <table style="width: 100%">
-                    <tbody>
-                      <tr style="height: 35px">
-                        <td
-                          style="
-                            font-weight: bold;
-                            width: 110px;
-                            text-align: left;
-                            font-weight: normal;
-                          "
-                        >
-                          表示区分
-                        </td>
-                        <!-- 回答6・追加・開始：表示区分のコンボボックスを作成 -->
-                        <td style="width: 150px">
-                          <select class="Select">
-                            <option value="0">新規登録申請中</option>
-                            <option value="0">新規登録発行中</option>
-                            <option value="0">登録済</option>
-                          </select>
-                        </td>
-                        <!-- 回答6・追加・開始：表示区分のコンボボックスを作成 -->
-                        <td style="text-align: right">
-                          <!-- 回答7・追加・開始：「回復」ボタンを作成 -->
-                          <input
-                            type="button"
-                            class="Button"
-                            id="btn回復"
-                            value="回復"
-                            style="width: 60px"
-                          />
-                          <!-- 回答7・追加・完了：「回復」ボタンを作成 -->
-                          <input
-                            type="button"
-                            class="Button"
-                            name="削除"
-                            id="btn削除"
-                            value="削除"
-                            style="width: 60px"
-                          />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div style="margin-top: 5px"></div>
-                  <table style="width: 100%; border: 1px solid #5b9bd5">
-                    <tbody>
-                      <tr style="height: 35px">
-                        <td style="width: 200px; padding-left: 5px" colspan="2">
-                          総件数：53 件
-                        </td>
-                        <td
-                          style="
-                            font-weight: bold;
-                            width: auto;
-                            text-align: right;
-                            font-weight: normal;
-                          "
-                        >
-                          表示件数
-                        </td>
-                        <td style="text-align: right; width: 100px">
-                          <select
-                            class="Select"
-                            id="cbx表示件数"
-                            name="表示件数"
-                            style="width: 85px"
-                          >
-                            <option value="0">すべて</option>
-                            <option value="5">5件</option>
-                            <option value="10" selected="">10件</option>
-                            <option value="20">20件</option>
-                            <option value="50">50件</option>
-                            <option value="100">100件</option>
-                          </select>
-                        </td>
-                      </tr>
+      <div style="text-align: left">
+        <!-- 回答4・変更・開始：左パネルの画像を設定 -->
+        <img src="./Images/Chrysanthemum.jpg" style="width: 150px; max-height: 150px; position: relative; z-index: 9; border: 1px dashed #bbbbbb; margin-bottom: 10px;" />
+        <!-- 回答4・変更・完了：左パネルの画像を設定 -->
+      </div>
 
-                      <tr name="tabletest" style="height: 35px">
-                        <td colspan="4" style="border: 1px solid #5b9bd5">
-                          <div name="ユーザーの一覧" id="divユーザーの一覧">
-                           <table id="検索結果一覧" style="width: 100%; word-break: break-all; font-size: 13px;">
-  <!--                            テーブルを動的に作成
-   -->  <tbody>
-      <tr style="height: 50px; border-bottom: 3px solid #5b9bd5;">
-        <td style="text-align: center; width: 40px">選択</td>
-        <td style="text-align: center; width: 145px">氏名<br /><span> ▲ </span></td>
-        <td style="text-align: center; width: 40px">性別<br /><span></span></td>
-        <td style="text-align: center; width: 100px">生年月日<br /><span></span></td>
-        <td style="text-align: center; width: 170px">メール<br /><span></span></td>
-        <td style="text-align: center; width: 100px">所属<br /><span></span></td>
-        <td style="text-align: center; width: 100px">役職<br /><span></span></td>
-      </tr>
-      <tr th:each="user, stat : ${users}">
-        <td style="text-align: center; width: 40px">
-          <input type="checkbox" th:id="${'chk選択' + stat.index}" th:name="'選択一覧'" th:value="${user.id}" />
-        </td>
-        <td style="width: 145px" th:text="${user.name}"></td>
-        <td style="text-align: center; width: 40px" th:text="${user.gender}"></td>
-        <td style="text-align: center; width: 100px" th:text="${user.dob}"></td>
-        <td style="text-align: center; width: 170px" th:text="${user.email}"></td>
-        <td style="text-align: center; width: 100px" th:text="${user.department}"></td>
-        <td style="text-align: center; width: 100px" th:text="${user.position}"></td>
-      </tr>
-    </tbody>
-  </table>
+      <div class="TitleLine" style="width: 100%"></div>
 
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="resize-triggers">
-            <div class="expand-trigger">
-              <div style="width: 803px; height: 2182px"></div>
-            </div>
-            <div class="contract-trigger"></div>
+      <div style="text-align: left; margin-top: 5px">
+        <span style="padding-left: 10px; font-weight: bold">ユーザー情報</span>
+      </div>
+      <div style="text-align: left; margin-top: 5px">
+        <span style="margin-left: 40px">営業部</span>
+      </div>
+      <div style="text-align: left; margin-top: 5px">
+        <span style="margin-left: 40px">1111111</span>
+      </div>
+
+      <div class="TitleLine" style="width: 100%; margin-top: 10px"></div>
+
+      <ul style="padding-left: 10px">
+        <li style="text-align: left; margin-top: 5px"><a href="/TimeLine/Index" style="margin-left: 10px">マイページ</a></li>
+        <li style="text-align: left; margin-top: 5px"><a href="/BulletinBoard/Index" style="margin-left: 10px; cursor: pointer">掲示板</a></li>
+        <li style="text-align: left; margin-top: 5px"><a href="/ApplicationForUser/Index" style="margin-left: 10px; cursor: pointer">書類申請</a></li>
+        <li style="text-align: left; margin-top: 5px"><a href="/FindUser/Index" style="margin-left: 10px; cursor: pointer">ユーザー検索</a></li>
+        <li style="text-align: left; margin-top: 5px"><a href="" style="margin-left: 10px; cursor: pointer">E-ランニング</a></li>
+        <li style="text-align: left; margin-top: 5px"><a href="/UserManagement/Index" style="margin-left: 10px; cursor: pointer">ユーザー管理</a></li>
+      </ul>
+    </div>
+    <form id="Form1">
+      <div id="mid" class="MidContainer" style="position: relative">
+        <table style="width: 100%">
+          <tbody>
+            <tr>
+              <td style="text-align: left; font-size: 25px; font-weight: bold" colspan="3">ユーザーの一覧</td>
+            </tr>
+            <tr style="height: 5px; vertical-align: top">
+              <td colspan="3">
+                <div class="TitleLine"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr id="errtr" style="height: auto">
+              <td style="width: 50px"></td>
+              <td style="width: auto">
+                <div id="lblエラー" style="color: red"></div>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2">
+                <table style="width: 100%">
+                  <tbody>
+                    <tr style="height: 35px">
+                      <td style="font-weight: bold; width: 110px; text-align: left; font-weight: normal;">表示区分</td>
+                      <!-- 回答6・追加・開始：表示区分のコンボボックスを作成 -->
+                      <td style="width: 150px">
+                        <select class="Select">
+                          <option value="1">新規登録申請中</option>
+                          <option value="2">新規登録発行中</option>
+                          <option value="3">登録済</option>
+                        </select>
+                      </td>
+
+                      <td style="width: 150px">
+                        <select class="Select">
+                          <option value="マネージャー">マネージャー</option>
+                          <option value="一般社員">一般社員</option>
+                          <option value="役員">役員</option>
+                        </select>
+                      </td>
+
+
+                      <!-- 回答6・追加・開始：表示区分のコンボボックスを作成 -->
+                      <td style="text-align: right">
+                        <!-- 回答7・追加・開始：「回復」ボタンを作成 -->
+                        <input type="button" class="Button" id="btn回復" value="回復" style="width: 60px" />
+                        <!-- 回答7・追加・完了：「回復」ボタンを作成 -->
+                        <input type="button" class="Button" name="削除" id="btn削除" value="削除" style="width: 60px" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="margin-top: 5px"></div>
+                <table style="width: 100%; border: 1px solid #5b9bd5">
+                  <tbody>
+                    <tr style="height: 35px">
+                      <td style="width: 200px; padding-left: 5px" colspan="2">総件数：53 件</td>
+                      <td style="font-weight: bold; width: auto; text-align: right; font-weight: normal;">表示件数</td>
+                      <td style="text-align: right; width: 100px">
+                        <select class="Select" id="cbx表示件数" name="表示件数" style="width: 85px">
+                          <option value="0">すべて</option>
+                          <option value="5">5件</option>
+                          <option value="10" selected="">10件</option>
+                          <option value="20">20件</option>
+                          <option value="50">50件</option>
+                          <option value="100">100件</option>
+                        </select>
+                      </td>
+                    </tr>
+
+                    <tr name="tabletest" style="height: 35px">
+                      <td colspan="4" style="border: 1px solid #5b9bd5">
+                        <div name="ユーザーの一覧" id="divユーザーの一覧">
+                          <table id="検索結果一覧" style="width: 100%; word-break: break-all; font-size: 13px;">
+                            <!--                            テーブルを動的に作成
+   -->
+                            <tbody>
+                              <tr style="height: 50px; border-bottom: 3px solid #5b9bd5;">
+                                <td style="text-align: center; width: 40px">選択</td>
+                                <td style="text-align: center; width: 145px">
+                                  氏名<br />
+                                  <span> ▲ </span>
+                                </td>
+                                <td style="text-align: center; width: 40px">
+                                  性別<br />
+                                  <span></span>
+                                </td>
+                                <td style="text-align: center; width: 100px">
+                                  生年月日<br />
+                                  <span></span>
+                                </td>
+                                <td style="text-align: center; width: 170px">
+                                  メール<br />
+                                  <span></span>
+                                </td>
+                                <td style="text-align: center; width: 100px">
+                                  所属<br />
+                                  <span></span>
+                                </td>
+                                <td style="text-align: center; width: 100px">
+                                  役職<br />
+                                  <span></span>
+                                </td>
+                              </tr>
+                              <tr th:each="user, stat : ${users}">
+                                <td style="text-align: center; width: 40px">
+                                  <input type="checkbox" th:id="${'chk選択' + stat.index}" th:name="'選択一覧'" th:value="${user.id}" />
+                                </td>
+                                <td style="width: 145px" th:text="${user.name}"></td>
+                                <td style="text-align: center; width: 40px" th:text="${user.gender}"></td>
+                                <td style="text-align: center; width: 100px" th:text="${user.dob}"></td>
+                                <td style="text-align: center; width: 170px" th:text="${user.email}"></td>
+                                <td style="text-align: center; width: 100px" th:text="${user.department}"></td>
+                                <td style="text-align: center; width: 100px" th:text="${user.position}"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="resize-triggers">
+          <div class="expand-trigger">
+            <div style="width: 803px; height: 2182px"></div>
           </div>
+          <div class="contract-trigger"></div>
         </div>
-        <script type="text/javascript">
+      </div>
+      <script type="text/javascript">
           $("#mid").resize(function (e) {
             SetBodyPadding();
           });
         </script>
-      </form>
-    </div>
+    </form>
+  </div>
 
-    <script>
+  <script>
       $(document).ready(function () {});
 
       $(document).on("change", "[id^='cbx表示件数']", function (e) {
@@ -906,6 +832,23 @@
         }
       }
     </script>
-  </body>
+    
+    <script>
+  $(document).ready(function() {
+    $('.Select').change(function() {
+      var selectedPosition = $(this).val();
+      $.ajax({
+        url: '/users/filter',
+        type: 'GET',
+        data: { position: selectedPosition },
+        success: function(response) {
+          // テーブルの内容を更新するロジックをここに追加
+          $('#検索結果一覧').html(response);
+        }
+      });
+    });
+  });
+</script>
+</body>
 </html>
 

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.test.demo.model.User;
@@ -39,4 +40,10 @@ public class test {
         return "hello"; // Thymeleafテンプレート名
     }
     
+    @GetMapping ("/users/filter")
+    public String filterUsers (@RequestParam ("position") String position, Model model) {
+        List<User> users = userService.getUsersByPosition (position);
+        model.addAttribute ("users", users);
+        return "hello"; // ユーザー一覧を表示するThymeleafテンプレート
+    }
 }
