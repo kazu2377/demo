@@ -34,11 +34,9 @@ public class test {
     
     @GetMapping ("/users")
     public String showUsers (Model model) {
-        // ユーザーリストをモデルに追加
         List<User> users = userService.getUsers ();
-        
         model.addAttribute ("users", users);
-        return "hello"; // Thymeleafテンプレートの名前
+        return "hello"; // Thymeleafテンプレート名
     }
     
 }

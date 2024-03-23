@@ -3,17 +3,24 @@ package com.example.test.demo.model;
 public class User {
     private String id;
     private String name;
+    private String gender;
+    private String dob; // 生年月日
     private String email;
-    private String role;
+    private String department;
+    private String position;
     
-    public User (String id, String name, String email, String role) {
+    // コンストラクタ
+    public User (String id, String name, String gender, String dob, String email, String department, String position) {
         this.id = id;
         this.name = name;
+        this.gender = gender;
+        this.dob = dob;
         this.email = email;
-        this.role = role;
+        this.department = department;
+        this.position = position;
     }
     
-    // idのゲッターとセッター
+    // ゲッターとセッター
     public String getId () {
         return id;
     }
@@ -22,7 +29,6 @@ public class User {
         this.id = id;
     }
     
-    // nameのゲッターとセッター
     public String getName () {
         return name;
     }
@@ -31,7 +37,22 @@ public class User {
         this.name = name;
     }
     
-    // emailのゲッターとセッター
+    public String getGender () {
+        return gender;
+    }
+    
+    public void setGender (String gender) {
+        this.gender = gender;
+    }
+    
+    public String getDob () {
+        return dob;
+    }
+    
+    public void setDob (String dob) {
+        this.dob = dob;
+    }
+    
     public String getEmail () {
         return email;
     }
@@ -40,12 +61,19 @@ public class User {
         this.email = email;
     }
     
-    // roleのゲッターとセッター
-    public String getRole () {
-        return role;
+    public String getDepartment () {
+        return department;
     }
     
-    public void setRole (String role) {
-        this.role = role;
+    public void setDepartment (String department) {
+        this.department = department;
+    }
+    
+    public String getPosition () {
+        return position;
+    }
+    
+    public void setPosition (String position) {
+        this.position = position;
     }
 }
