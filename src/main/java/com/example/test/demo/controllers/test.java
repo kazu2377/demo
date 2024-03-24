@@ -48,4 +48,13 @@ public class test {
         return "users-fragment"; // ユーザーテーブルの行だけを更新するためのテンプレート
         
     }
+    
+    @GetMapping ("/users/sort")
+    public String sortUsers (@RequestParam ("column") String column, @RequestParam ("order") String order,
+            Model model) {
+        List<User> users = userService.sortUsers (column, order);
+        model.addAttribute ("users", users);
+        return "users-fragment"; // 更新されたユーザーテーブルの行を返す
+    }
+    
 }

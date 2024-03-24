@@ -33,4 +33,25 @@ public class UserService {
         }
         return filteredUsers;
     }
+    
+    public List<User> sortUsers (String column, String order) {
+        List<User> users = getUsers (); // 既存のユーザーリストを取得
+        
+        // ソート処理（ここでは例として名前でソート）
+        users.sort ( (u1, u2) -> {
+            int direction = "asc".equals (order) ? 1 : -1;
+            switch (column) {
+                case "name":
+                    return u1.getName ().compareTo (u2.getName ()) * direction;
+                case "gender":
+                    return u1.getGender ().compareTo (u2.getGender ()) * direction;
+                // 他のフィールドに対するソート条件も同様に追加
+                default:
+                    return 0;
+            }
+        });
+        
+        return users;
+    }
+    
 }
