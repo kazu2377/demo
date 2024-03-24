@@ -38,7 +38,7 @@ public class UserService {
         return filteredUsers;
     }
     
-    public List<User> sortUsers (String column, String order) {
+    public Page<User> sortUsers (String column, String order, Pageable pageable) {
         List<User> users = getUsers (); // 既存のユーザーリストを取得
         
         // ソート処理（ここでは例として名前でソート）
@@ -55,7 +55,12 @@ public class UserService {
             }
         });
         
-        return users;
+        // ページング処理
+        int start = (int) pageable.getOffset ();
+        int end = Math.min ((start + pageable.getPageSize ()), users.size ());
+        List<User> pageUsers = users.subList (start, end);
+        
+        return new PageImpl<> (pageUsers, pageable, users.size ());
     }
     
     public Page<User> getUsersPage (Pageable pageable) {

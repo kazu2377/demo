@@ -24,7 +24,7 @@
         役職<br /> <span></span>
       </td>
     </tr>
-    <tr th:each="user, stat : ${users}">
+    <tr th:each="user, stat : ${userPage}">
       <td style="text-align: center; width: 40px">
         <input type="checkbox" th:id="${'chk選択' + stat.index}" th:name="'選択一覧'" th:value="${user.id}" />
       </td>
@@ -36,4 +36,15 @@
       <td style="text-align: center; width: 100px" th:text="${user.position}"></td>
     </tr>
   </tbody>
+  <!-- テーブルの最終行にページングコントロールを追加 -->
+  <tfoot>
+    <tr>
+      <td colspan="7">
+        <div style="text-align: center;">
+          <a th:href="@{/users(page=${userPage.number - 1}, size=${userPage.size})}" th:unless="${userPage.first}">◀</a> <span th:text="${userPage.number + 1}">1</span> <span>/</span> <span
+            th:text="${userPage.totalPages}">1</span> <a th:href="@{/users(page=${userPage.number + 1}, size=${userPage.size})}" th:unless="${userPage.last}">▶</a>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
 </table>

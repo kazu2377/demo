@@ -327,43 +327,7 @@ span {
       }
     </script>
 
-<style type="text/css">
-@keyframes resizeanim {from { opacity:0;
-		
-}
 
-to {
-		opacity: 0;
-}
-
-}
-.resize-triggers {
-		animation: 1ms resizeanim;
-		visibility: hidden;
-		opacity: 0;
-}
-
-.resize-triggers, .resize-triggers>div, .contract-trigger:before {
-		content: " ";
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		overflow: hidden;
-}
-
-.resize-triggers>div {
-		background: #eee;
-		overflow: auto;
-}
-
-.contract-trigger:before {
-		width: 200%;
-		height: 200%;
-}
-</style>
 </head>
 
 
@@ -534,10 +498,7 @@ to {
                               <tr style="height: 50px; border-bottom: 3px solid #5b9bd5;">
                                 <td style="text-align: center; width: 40px">選択</td>
 
-<th id="name" sortable style="text-align: center; width: 145px">
-  氏名<span> ▲ </span>
-
-
+                                <th id="name" sortable style="text-align: center; width: 145px">氏名<span> ▲ </span>
                                 <td style="text-align: center; width: 40px">
                                   性別<br /> <span></span>
                                 </td>
@@ -566,22 +527,19 @@ to {
                                 <td style="text-align: center; width: 100px" th:text="${user.position}"></td>
                               </tr>
                             </tbody>
-                            
+
                             <tr>
-<!-- テーブルの最終行にページングコントロールを追加 -->
-<tfoot>
-  <tr>
-    <td colspan="7">
-      <div style="text-align: center;">
-        <a th:href="@{/users(page=${userPage.number - 1}, size=${userPage.size})}" th:unless="${userPage.first}">◀</a>
-        <span th:text="${userPage.number + 1}">1</span>
-        <span>/</span>
-        <span th:text="${userPage.totalPages}">1</span>
-        <a th:href="@{/users(page=${userPage.number + 1}, size=${userPage.size})}" th:unless="${userPage.last}">▶</a>
-      </div>
-    </td>
-  </tr>
-</tfoot>
+                              <!-- テーブルの最終行にページングコントロールを追加 -->
+                            <tfoot>
+                              <tr>
+                                <td colspan="7">
+                                  <div style="text-align: center;">
+                                    <a th:href="@{/users(page=${userPage.number - 1}, size=${userPage.size})}" th:unless="${userPage.first}">◀</a> <span th:text="${userPage.number + 1}">1</span> <span>/</span>
+                                    <span th:text="${userPage.totalPages}">1</span> <a th:href="@{/users(page=${userPage.number + 1}, size=${userPage.size})}" th:unless="${userPage.last}">▶</a>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tfoot>
 
                           </table>
 
@@ -596,13 +554,13 @@ to {
         </table>
 
       </div>
-      
+
     </form>
   </div>
 
 </body>
 
-  <script>
+<script>
   $(document).ready(function() {
     $('.Select').change(function() {
       var selectedPosition = $(this).val();
@@ -663,7 +621,7 @@ function updateSortIcons(columnId, order) {
 
 
 </script>
-  
+
 
 </html>
 
