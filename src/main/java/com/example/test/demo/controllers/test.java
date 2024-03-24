@@ -2,11 +2,12 @@ package com.example.test.demo.controllers;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.example.test.demo.model.User;
 import com.example.test.demo.service.UserService;
@@ -15,25 +16,25 @@ import com.example.test.demo.service.UserService;
 @Controller
 public class test {
     
-    @GetMapping ("/hello")
-    public ModelAndView helloWorld (ModelAndView mav) {
-        // model.addAttribute("message", "Hello World");
-        
-        mav.setViewName ("hello");
-        // mav.addObject("key", 12);
-        return mav;
-        
-    }
-    
-    @GetMapping ("/test")
-    public String hello (Model model) {
-        model.addAttribute ("message", "Hello World");
-        return "test";
-    }
-    
+    // @GetMapping ("/hello")
+    // public ModelAndView helloWorld (ModelAndView mav) {
+    // // model.addAttribute("message", "Hello World");
+    //
+    // mav.setViewName ("hello");
+    // // mav.addObject("key", 12);
+    // return mav;
+    //
+    // }
+    //
+    // @GetMapping ("/test")
+    // public String hello (Model model) {
+    // model.addAttribute ("message", "Hello World");
+    // return "test";
+    // }
+    //
     private final UserService userService = new UserService ();
     
-    @GetMapping ("/users")
+    @GetMapping ("/users_main")
     public String showUsers (Model model) {
         List<User> users = userService.getUsers ();
         model.addAttribute ("users", users);
@@ -55,6 +56,13 @@ public class test {
         List<User> users = userService.sortUsers (column, order);
         model.addAttribute ("users", users);
         return "users-fragment"; // 更新されたユーザーテーブルの行を返す
+    }
+    
+    @GetMapping ("/users")
+    public String getUsers (Model model, Pageable pageable) {
+        Page<User> userPage = userService.getUsersPage (pageable);
+        model.addAttribute ("userPage", userPage);
+        return "hello"; // ユーザー一覧ページ
     }
     
 }

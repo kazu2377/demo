@@ -3,6 +3,10 @@ package com.example.test.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+
 import com.example.test.demo.model.User;
 
 public class UserService {
@@ -52,6 +56,14 @@ public class UserService {
         });
         
         return users;
+    }
+    
+    public Page<User> getUsersPage (Pageable pageable) {
+        List<User> allUsers = getUsers (); // すでにある全ユーザーのリストを取得
+        int start = (int) pageable.getOffset ();
+        int end = Math.min ((start + pageable.getPageSize ()), allUsers.size ());
+        List<User> pageUsers = allUsers.subList (start, end);
+        return new PageImpl<> (pageUsers, pageable, allUsers.size ());
     }
     
 }
