@@ -3,15 +3,23 @@ package com.example.test.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.example.test.demo.model.User;
 
+@Service
+@Scope (value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserService {
+    
     public List<User> getUsers () {
         List<User> users = new ArrayList<User> ();
+        
         for (int i = 1; i <= 30; i++) {
             String gender = (i % 2 == 0) ? "女性" : "男性";
             String position;

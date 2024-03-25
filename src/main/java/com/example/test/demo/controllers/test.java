@@ -17,23 +17,13 @@ import com.example.test.demo.service.UserService;
 @Controller
 public class test {
     
-    // @GetMapping ("/hello")
-    // public ModelAndView helloWorld (ModelAndView mav) {
-    // // model.addAttribute("message", "Hello World");
-    //
-    // mav.setViewName ("hello");
-    // // mav.addObject("key", 12);
-    // return mav;
-    //
-    // }
-    //
-    // @GetMapping ("/test")
-    // public String hello (Model model) {
-    // model.addAttribute ("message", "Hello World");
-    // return "test";
-    // }
-    //
-    private final UserService userService = new UserService ();
+    // private final UserService userService = new UserService ();
+    
+    private final UserService userService;
+    
+    public test (UserService userService) {
+        this.userService = userService;
+    }
     
     @GetMapping ("/users_main")
     public String showUsers (Model model) {
